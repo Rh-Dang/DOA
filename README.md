@@ -1,12 +1,14 @@
 # Unbiased Directed Object Attention Graph for Object Navigation
 Ronghao Dang, Zhuofan Shi, Liuyi Wang, Zongtao He, Chengju Liu, Qijun Chen (Under review for ACMMM 2022)
 
+<p align="center"><img src="fig/model architecture.png" width="500" /></p>
+
 [Arxiv Paper](https://arxiv.org/abs/2204.04421)
 ## Setup
--Clone the repository `git clone http://github.com/gold-d/DOA.git` and move into the top level directory `cd DOA`
--Create conda environment. `conda env create -f environment.yml`
--Activate the environment. `conda activate ng`
--Download the [dataset](https://drive.google.com/file/d/1kvYvutjqc6SLEO65yQjo8AuU85voT5sC/view), which refers to [ECCV-VN](https://github.com/xiaobaishu0097/ECCV-VN). The offline data is discretized from [AI2-Thor](https://ai2thor.allenai.org/) simulator.
+- Clone the repository `git clone http://github.com/gold-d/DOA.git` and move into the top level directory `cd DOA`
+- Create conda environment. `conda env create -f environment.yml`
+- Activate the environment. `conda activate ng`
+- Download the [dataset](https://drive.google.com/file/d/1kvYvutjqc6SLEO65yQjo8AuU85voT5sC/view), which refers to [ECCV-VN](https://github.com/xiaobaishu0097/ECCV-VN). The offline data is discretized from [AI2-Thor](https://ai2thor.allenai.org/) simulator.
 The `data` folder should look like this
 ```python
 data/ 
