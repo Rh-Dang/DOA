@@ -28,6 +28,6 @@ data/
 ```
 ## Training and Evaluation
 ### Train our DOA model
-'python main.py --title DOA --model DOA --workers 9 --gpu-ids 0'
+`python main.py --title DOA --model DOA --workers 9 --gpu-ids 0`
 ### Evaluate our DOA model
-'python full_eval.py --title DOA --model DOA --results-json DOA.json --gpu-ids 0 
+`python full_eval.py --title DOA --model DOA --results-json DOA.json --gpu-ids 0` 
