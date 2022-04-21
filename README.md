@@ -5,6 +5,8 @@ Ronghao Dang, Zhuofan Shi, Liuyi Wang, Zongtao He, Chengju Liu, Qijun Chen (Unde
 
 <p align="center"><img src="fig/model_architecture.png" width="700" /></p>
 
+## Abstract
+We explore the object attention bias problem in object navigation task. Therefore, we propose the DOA graph and novel cross-attention method to solve the problem. Our overall model achieves a SOTA level.
 ## Setup
 - Clone the repository `git clone http://github.com/gold-d/DOA.git` and move into the top level directory `cd DOA`
 - Create conda environment. `conda env create -f environment.yml`
