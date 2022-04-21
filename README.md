@@ -1,7 +1,7 @@
 # Unbiased Directed Object Attention Graph for Object Navigation
 Ronghao Dang, Zhuofan Shi, Liuyi Wang, Zongtao He, Chengju Liu, Qijun Chen (Under review for ACMMM 2022)
 
-<p align="center"><img src="fig/model architecture.png" width="500" /></p>
+<p align="center"><img src="fig/model_architecture.png" width="500" /></p>
 
 [Arxiv Paper](https://arxiv.org/abs/2204.04421)
 ## Setup
