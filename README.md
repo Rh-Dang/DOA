@@ -1,9 +1,10 @@
 # Unbiased Directed Object Attention Graph for Object Navigation
 Ronghao Dang, Zhuofan Shi, Liuyi Wang, Zongtao He, Chengju Liu, Qijun Chen (Under review for ACMMM 2022)
 
-<p align="center"><img src="fig/model_architecture.png" width="500" /></p>
-
 [Arxiv Paper](https://arxiv.org/abs/2204.04421)
+
+<p align="center"><img src="fig/model_architecture.png" width="700" /></p>
+
 ## Setup
 - Clone the repository `git clone http://github.com/gold-d/DOA.git` and move into the top level directory `cd DOA`
 - Create conda environment. `conda env create -f environment.yml`
