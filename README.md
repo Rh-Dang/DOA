@@ -31,3 +31,13 @@ data/
 `python main.py --title DOA --model DOA --workers 9 --gpu-ids 0`
 ### Evaluate our DOA model
 `python full_eval.py --title DOA --model DOA --results-json DOA.json --gpu-ids 0` 
+## Citing
+If you find this project useful in your research, please consider citing:
+```
+@article{dang2022unbiased,
+  title={Unbiased Directed Object Attention Graph for Object Navigation},
+  author={Dang, Ronghao and Shi, Zhuofan and Wang, Liuyi and He, Zongtao and Liu, Chengju and Chen, Qijun},
+  journal={arXiv preprint arXiv:2204.04421},
+  year={2022}
+}
+```
