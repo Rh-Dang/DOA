@@ -9,9 +9,9 @@ Ronghao Dang, Zhuofan Shi, Liuyi Wang, Zongtao He, Chengju Liu, Qijun Chen (Unde
 We explore the object attention bias problem in object navigation task. Therefore, we propose the DOA graph and novel cross-attention method to solve the problem. Our overall model achieves a SOTA level.
 ## Setup
 - Clone the repository `git clone http://github.com/gold-d/DOA.git` and move into the top level directory `cd DOA`
-- Create conda environment. `conda env create -f environment.yml`
-- Activate the environment. `conda activate ng`
+- Create conda environment. `pip install -r requirements.txt`
 - Download the [dataset](https://drive.google.com/file/d/1kvYvutjqc6SLEO65yQjo8AuU85voT5sC/view), which refers to [ECCV-VN](https://github.com/xiaobaishu0097/ECCV-VN). The offline data is discretized from [AI2-Thor](https://ai2thor.allenai.org/) simulator.
+- Download the [pretrain dataset](https://drive.google.com/file/d/1dFQV10i4IixaSUxN2Dtc6EGEayr661ce/view), which refers to [VTNet](https://github.com/xiaobaishu0097/ICLR_VTNet).
 The `data` folder should look like this
 ```python
 data/ 
@@ -25,12 +25,21 @@ data/
         │   └── optimal_action.json
         ├── FloorPlan2/
         └── ...
-```
+    └── AI2Thor_VisTrans_Pretrain_Data/
+        ├── data/
+        ├── annotation_train.json
+        ├── annotation_val.json
+        └── annotation_test.json
+``` 
 ## Training and Evaluation
+
+### Pre-train our DOA model
+
+`python main_pretraining.py --title DOA_Pretrain --model DOA_Pretrain --workers 9 --gpu-ids 0 --epochs 20 --log-dir runs/pretrain --save-model-dir trained_models/pretrain`
 ### Train our DOA model
-`python main.py --title DOA --model DOA --workers 9 --gpu-ids 0`
+`python main.py --title DOA --model DOA --workers 9 --gpu-ids 0 --max-ep 3000000 --log-dir runs/RL_train --save-model-dir trained_models/RL_train --pretrained-trans trained_models/pretrain/checkpoint0004.pth` 
 ### Evaluate our DOA model
-`python full_eval.py --title DOA --model DOA --results-json DOA.json --gpu-ids 0` 
+`python full_eval.py --title DOA --model DOA --results-json eval_best_results/DOA.json --gpu-ids 0 --log-dir runs/RL_train --save-model-dir trained_models/RL_train`  
 ## Citing
 If you find this project useful in your research, please consider citing:
 ```
