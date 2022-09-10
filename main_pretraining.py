@@ -26,7 +26,7 @@ def main():
     args = command_parser.parse_arguments()
     #init_distributed_mode(args)                   
 
-    args.data_dir = '/data_sdd/datadrh/HOZ/data/AI2Thor_VisTrans_Pretrain_Data/'  
+    args.data_dir = './data/AI2Thor_VisTrans_Pretrain_Data/'  
 
     print(args)
 
