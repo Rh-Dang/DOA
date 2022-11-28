@@ -176,7 +176,8 @@ class DOA_Pretrain(torch.nn.Module):
         target_mutiHead = target.masked_fill(object_select_appear,0)            
 
         image_object_attention = self.avgpool(global_feature).squeeze(dim = 3).transpose(1,2)   #(bs, 1, 512)  
-        spa = self.one_hot(self.num_cate).to(target.device).view(1, self.num_cate, self.num_cate).expand(batch_size, self.num_cate, self.num_cate)     
+        spa = self.one_hot(self.num_cate).to(target.device).view(1, self.num_cate, self.num_cate).expand(batch_size, self.num_cate, self.num_cate) 
+        num_cate_index = torch.bmm(spa.transpose(1, 2), target_object).transpose(1, 2)  
         num_cate_index = self.num_cate_embed(num_cate_index)   
         # num_cate_index = num_cate_index.view(1, 1, 64).repeat(batch_size, 1, 1)       # (bs, 1, 64)
         image_object_attention = torch.cat((image_object_attention, num_cate_index), dim = 2)  #(bs, 1, 512+64=576)
